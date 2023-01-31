@@ -1,32 +1,22 @@
+<script>
+	export let socials;
+	export let mailid='';
+</script>
 <section>
 	<footer>
 		<p class="contact">
 			Let's work together
 			<span class="email">
-				<a href="mailto:wayne.cen@gmail.com" class="email"> wayne.cen@gmail.com </a>
+				<a href="mailto:{mailid}" class="email"> {mailid} </a>
 			</span>
 		</p>
+
 		<div class="wrapper">
-			<a class="socials" href="https://medium.com/@wayne.cen" target="_blank">
-				<p>Medium</p>
+			{#each socials as {platform,link}}
+			<a class="socials" href={link} target="_blank">
+				<p>{platform}</p>
 			</a>
-			<a
-				class="socials"
-				href="https://www.linkedin.com/in/waynercen/"
-				target="_blank"
-			>
-				<p>LinkedIn</p>
-			</a>
-			<a class="socials" href="https://github.com/waynecen" target="_blank">
-				<p>GitHub</p>
-			</a>
-			<a
-				class="socials"
-				href="https://www.instagram.com/waynercen/"
-				target="_blank"
-			>
-				<p>Instagram</p>
-			</a>
+			{/each}
 		</div>
 	</footer>
 </section>

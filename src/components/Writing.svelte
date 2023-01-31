@@ -1,13 +1,21 @@
+<script>
+	export let milestones=[];
+	import Subheader from "./Subheader.svelte";
+</script>
+<div >
+	<Subheader>Milestones</Subheader>
 <div class="wrapper">
+	{#each milestones as {title,date,link}}
 	<a
-	href="https://betterprogramming.pub/lets-code-mubasic-piano-keys-3ac397d3df1d"
-	target="_blank" class="article-link">Let's Code: Piano Keys, published in Better Programming<p class="date"> September 2022</p></a>
+	href={link}
+	target="_blank" class="article-link">{title}
+	<p class="date"> {date}</p>
+	</a>
+	{/each}
 	
-	<a
-	href="https://betterprogramming.pub/lets-code-mubasic-piano-keys-3ac397d3df1d"
-	target="_blank" class="article-link">Learning 3D as a product
-	designer, published in UX Collective<p class="date"> November
-	2020</p></a>
+	
+	
+</div>
 </div>
 
 <style>

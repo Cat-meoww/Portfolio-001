@@ -7,52 +7,42 @@
 	import Subheader from "./components/Subheader.svelte";
 	import Writing from "./components/Writing.svelte";
 	import Cursor from "./Cursor.svelte";
+	import {data} from "./lib/data.js";
 </script>
-
+<svelte:head>
+	<title>{data.name}</title>
+</svelte:head>
 <main>
 	<Cursor />
 	<NavBar/>
 	<section class="overview">
 		<h1 class="header">
-			I'm Wayne Cen <img
+			I'm {data.name} <img
 				src="/img/hand-wave-emoji.png"
 				class="emoji--handwave"
 				alt="Hand wave emoji"
 			/>
 		</h1>
 		<p class="description">
-			Software developer and designer — specializing in designing and
-			building accessible, fun, and <span class="magic">eye-catching</span> things
-			for the web.
+		{@html data.description}
 		</p>
 	</section>
 	<Divider />
-	<Subheader>Selected Work</Subheader>
+	<Subheader>Previous Works</Subheader>
 	<section class="projects">
-		<Project name="Tenzi" link="https://tenzi-game.vercel.app/"
-		token="React"
-			><p>
-				A game of rolling dice quickly until you hold ten dice of equal value
-			</p>
-		</Project>
-		<Project name="Quizzical" link="https://quizzical-ten.vercel.app/" token="React"
-			><p>Multiple choice trivia game</p></Project
-		>
-		<Project name="The Weather"
-		link="https://the-weather-six.vercel.app/" token="HTML, CSS, JS"
-			><p>
-				Search the weekly weather forecast for any location
-			</p>
-		</Project>
+
+		{#each data.projects as project }
+		   <Project {...project} />
+		{/each}
+
+		
 	</section>
+	<Divider id="about"/>
+        <About/>
 	<Divider />
-	<Subheader>About Me</Subheader>
-	<About/>
+	   <Writing milestones={data.milestones}/>
 	<Divider />
-	<Subheader>Writing</Subheader>
-	<Writing/>
-	<Divider />
-	<Footer />
+	<Footer socials={data.socials} mailid={data.mailid}/>
 	<Divider />
 </main>
 
@@ -96,38 +86,12 @@
 	/* Projects */
 	.projects {
 		display: flex;
+		flex-wrap: wrap;
+		row-gap: 20px;
 		flex-direction: row;
 		justify-content: space-between;
 	}
 
-	/* accent text */
-	@keyframes background-pan {
-		from {
-			background-position: 0% center;
-		}
-
-		to {
-			background-position: -200% center;
-		}
-	}
-
-	p > .magic {
-		animation: background-pan 5s linear infinite;
-		background: linear-gradient(
-			to right,
-			var(--gradient1),
-			var(--gradient2),
-			var(--gradient3),
-			var(--gradient1)
-		);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		background-size: 200%;
-		white-space: nowrap;
-		font-weight: 700;
-		font-size: 1rem;
-	}
 
 	/* CSS Animations */
 	@keyframes handwave {

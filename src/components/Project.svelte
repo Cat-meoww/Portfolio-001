@@ -1,13 +1,14 @@
 <script>
-	export let name, link, token;
+	export let name, link, token,description ="";
 </script>
+
 
 <div class="card">
 	<a href={link} target="_blank">
 		<div class="card-content">
 			<div class="wrapper">
 				<h3 class="card-title">{name}</h3>
-				<h4 class="card-subtitle"><slot></slot></h4>
+				<h4 class="card-subtitle">{description}<slot></slot></h4>
 			</div>
 			<div class="token">{token}</div>
 		</div>

@@ -1,32 +1,39 @@
 <script>
 	import AccentText from "./AccentText.svelte";
+	import Subheader from "./Subheader.svelte";
 </script>
 
-<section id="about">
+<div >
+<Subheader>About Me</Subheader>
+
+<section >
 	<div class="flex-row">
-			<img src="img/portrait-600.png" class="portrait" alt="Wayne
-			Cen Portrait">
+			<img src="img/portrait-600.png" class="portrait" alt="Profile Portrait">
 
 		<p class="about-me">
 			Graduated with a <AccentText><a
-			href="https://design.ampd.yorku.ca/" target="_blank">Bachelor of
-			Design</a></AccentText> from York University. Focused mainly on
-			<AccentText>UX & UI</AccentText> design, dabbling in coding
+			href="/#" target="_self">Bachelor of
+			Degree</a></AccentText> from SV University. Focused mainly on
+			<AccentText>Computer sciences and Electronics</AccentText> dabbling in coding
 			courses. Fell in love with programming. Spent a year building
 			projects to learn how to code.
-			<AccentText>Passionate</AccentText> about learning, writing, and
-			video games. <AccentText>React</AccentText> and
-			<AccentText>TypeScript</AccentText> are my frameworks of choice.
-			Currently developing demos for my passion project,
+			<AccentText>Passionate</AccentText> about learning, coding, and
+			open sourcing softwares.
+			<br><AccentText>Codeigniter and Sveltekit</AccentText> Is my favorite Backend framework.<br>
+			<AccentText>Svelte</AccentText> Is my favorite front-end framework of choice.
+			<br>
+			Efficient knowleged In <AccentText>MYSQL (RDBMS) & MONGODB</AccentText> .<br> 
+			<AccentText>Services </AccentText>likes Restapi, Bugfixing, Api Integrations,building core production web apps, static sites are provided.
 			<AccentText>
-				<a href="https://lets-code-chi.vercel.app/"
-				target="_blank">Let's Code</a></AccentText>, built using <AccentText>Next.js</AccentText>.
+				<!-- svelte-ignore a11y-missing-attribute -->
+				<a>Let's built</a></AccentText>, web apps  <AccentText>with Efficient frameworks</AccentText>.
 			<br>
 			<br>
-			Available for <AccentText>front-end developer</AccentText> roles. 
+			Available for <AccentText>Lamp stack developer</AccentText> and <AccentText> JS based platform developer</AccentText> roles. 
 		</p>
 	</div>
 </section>
+</div>
 
 <style>
 	.flex-row {
