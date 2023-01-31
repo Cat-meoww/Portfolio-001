@@ -31,11 +31,11 @@ export const data={
     socials:[
         {
             platform:"GitHub",
-            link:"",
+            link:"https://github.com/Cat-meoww",
         },
         {
             platform:"Stack Overflow",
-            link:"",
+            link:"https://stackoverflow.com/users/20306839",
         }
     ],
     milestones:[
