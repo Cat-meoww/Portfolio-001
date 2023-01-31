@@ -1,0 +1,86 @@
+/* Font Import */
+@font-face {
+	font-family: "Woodland";
+	src: url("/fonts/ppwoodland-regular-webfont.woff2") format("woff2"),
+		url("/fonts/ppwoodland-regular-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	/* typography */
+	--primary: "Inter";
+	--secondary: "Woodland";
+
+	/* animation */
+	--smooth: cubic-bezier(0.075, 0.8, 0.17, 1);
+
+	/* colors */
+	--gradient1: hsl(39, 100%, 85%);
+	--gradient2: hsl(305, 100%, 72%);
+	--gradient3: hsl(192, 100%, 82%);
+	--gradient4: hsl(330, 100%, 63%);
+	--gradient5: hsl(288, 100%, 71%);
+	--gradient6: hsl(36, 100%, 64%);
+	--border: hsl(208, 8%, 30%);
+	--grey: hsl(0, 0%, 65%);
+	--icon-default: hsl(0, 0%, 63%);
+	--bg-dark: hsl(0, 0%, 4%);
+	--text-offwhite: hsl(0, 0%, 96%);
+	--cursor-color: hsl(0, 0%, 100%);
+	--cursor-hover: rgba(250, 250, 250, 0.2);
+	--linkHover: hsl(44, 100%, 50%);
+	--divider: rgba(105, 105, 105, 0.3);
+
+	/* sizes */
+	--sidePadding: 15%;
+	--paragraph-length: 52ch;
+	--logoSize: 20px;
+	--cardSize: 30%;
+
+	/* scrollbar for Firefox */
+	scrollbar-color: rgb(34, 34, 34) var(--background);
+	scrollbar-width: thin;
+	cursor: none;
+}
+
+/* Scrollbar for Webkit */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(46, 46, 46);
+	border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(87, 87, 87);
+}
+
+/* Override Generic Styling */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	overflow-x: hidden;
+	height: 100vh;
+}
+
+h1,
+p {
+	color: var(--text-color);
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	transition: all 0.2s ease-out;
+	cursor: none;
+}
