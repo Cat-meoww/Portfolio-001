@@ -4,12 +4,12 @@
 	</a>
 	<div class="linkWrapper">
 		<a href="#about">About</a>
-		<div class="linkDivider">|</div>
-		<a
+		<!--<div class="linkDivider">|</div>
+		 <a
 			href="https://drive.google.com/file/d/1Xcp28qiHAozYg7DSoIP8xLjTqj0Zzo-E/view?usp=sharing"
 			target="_blank">
 			Resume
-		</a>
+		</a> -->
 	</div>
 </nav>
 
@@ -48,10 +48,10 @@
 		color: var(--linkHover);
 	}
 
-	.linkDivider {
+	/* .linkDivider {
 		color: var(--divider);
 		font-weight: 600;
-	}
+	} */
 
 	@media screen and (max-width: 1440px) {
 		nav {
