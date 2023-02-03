@@ -6,7 +6,8 @@
 	import Project from "./components/Project.svelte";
 	import Subheader from "./components/Subheader.svelte";
 	import Writing from "./components/Writing.svelte";
-	import Cursor from "./Cursor.svelte";
+	import Cursor from "./components/Cursor.svelte";
+	import Skills from "./components/Skills.svelte";
 	import {data} from "./lib/data.js";
 </script>
 <svelte:head>
@@ -30,19 +31,18 @@
 	<Divider />
 	<Subheader>Previous Works</Subheader>
 	<section class="projects">
-
 		{#each data.projects as project }
 		   <Project {...project} />
-		{/each}
-
-		
+		{/each}	
 	</section>
 	<Divider id="about"/>
         <About/>
 	<Divider />
+		<Skills skills={data.skills} />
+	<Divider />
 	   <Writing milestones={data.milestones}/>
 	<Divider />
-	<Footer socials={data.socials} mailid={data.mailid}/>
+		<Footer socials={data.socials} mailid={data.mailid}/>
 	<Divider />
 </main>
 
