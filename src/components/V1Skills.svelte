@@ -1,49 +1,47 @@
 <script>
     // @ts-nocheck
-    import { onMount,onDestroy } from "svelte";
+    import { onMount } from "svelte";
+    import { DataSet, Network } from "vis-network/standalone";
     import Subheader from "./Subheader.svelte";
+    //import "https://unpkg.com/vis-network/standalone/umd/vis-network.min.js";
     export let skills;
 
+    //console.log(skills);
+    // create a network
     let container;
-    
-    onMount(() => {
-        
 
-        let observer = new IntersectionObserver(async (entries) => {
+    onMount(() => {
+        // create an array with nodes
+        const nodes = new DataSet([]);
+
+        // create an array with edges
+        const edges = new DataSet([]);
+
+        const data = {
+            nodes: nodes,
+            edges: edges,
+        };
+        const options = {
+            // autoResize: false,
+            // height:"70%",
+            interaction: {
+                zoomView: false,
+            },
+        };
+        let observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
-                
                 //console.log("started observing");
                 observer.unobserve(container);
-
-                const  {DataSet, Network}=await import('vis-network/standalone');
-                
-                Graph.__init(DataSet, Network);
+                const network = new Network(container, data, options);
+                Graph.__init();
             } else {
                 //console.log("Done");
             }
         });
         observer.observe(container);
 
-        const Graph = {
-            nodes:null,
-            edges:null,
-            data:null,
-            options: {
-                // autoResize: false,
-                // height:"70%",
-                interaction: {
-                    zoomView: false,
-                },
-            },
-            __init: (DataSet, Network) => {
-
-                Graph.nodes = new DataSet([]);
-                Graph.edges = new DataSet([]);
-                Graph.data = {
-                    nodes: Graph.nodes,
-                    edges: Graph.edges,
-                };
-                const network = new Network(container, Graph.data, Graph.options);
+        let Graph = {
+            __init: () => {
                 Graph.formateDataset(skills);
             },
             delay: (ms) => {
@@ -69,12 +67,12 @@
                     words = words.concat(item.title);
                     let sysedge = Graph.getEdge(words, item.title);
 
-                    Graph.edges.add({
+                    edges.add({
                         from: words[sysedge],
                         to: item.title,
                     });
 
-                    await Graph.delay(400);
+                    await Graph.delay(300);
                 }
             },
             getEdge: (words, title) => {
@@ -89,12 +87,13 @@
             },
             addNode: (item) => {
                 return new Promise((resolve, reject) => {
-                    Graph.nodes.add({
+                    nodes.add({
                         id: item.title,
                         label: item.title,
                         chosen: {
                             node: (values) => {
                                 values.borderColor = "#ffbb00";
+                                
                             },
                         },
                         color: {
@@ -123,9 +122,6 @@
                 });
             },
         };
-        return ()=>{
-            observer.unobserve(container);
-        }
     });
 </script>
 
