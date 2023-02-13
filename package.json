@@ -15,5 +15,8 @@
     "svelte": "^3.44.0",
     "vis-network": "^9.1.2",
     "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^0.1.8"
   }
 }

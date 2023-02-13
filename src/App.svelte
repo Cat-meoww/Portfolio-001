@@ -9,6 +9,12 @@
 	import Cursor from "./components/Cursor.svelte";
 	import Skills from "./components/Skills.svelte";
 	import {data} from "./lib/data.js";
+	//vercel analytics
+	import {inject} from "@vercel/analytics"
+	
+	const {DEV}=import.meta.env;
+	//console.log(DEV);
+	inject({mode:DEV?'development':'production'});
 </script>
 <svelte:head>
 	<title>{data.name}</title>

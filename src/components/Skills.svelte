@@ -1,6 +1,6 @@
 <script>
     // @ts-nocheck
-    import { onMount,onDestroy } from "svelte";
+    import { onMount } from "svelte";
     import Subheader from "./Subheader.svelte";
     export let skills;
 
