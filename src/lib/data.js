@@ -2,8 +2,27 @@
 export const data = {
     name: "Naveen",
     mailid: "pidugunaveensetty@gmail.com",
-    description: "Full stack Developer and designer — specializing in MYSQL, MongoDB, PHP, Codeigniter, Sveltekit, Nodejs  and building accessible, and <span class=\"magic\">Dynamic </span> web apps things for the <span class=\"magic\">101</span>.",
+    description: "Full stack Developer and designer — specializing in MYSQL, MongoDB, PHP, Codeigniter, Sveltekit, Nodejs  and building accessible, and <span class=\"magic\">Dynamic </span> web apps things with <span class=\"magic\">Passionate</span> 🔥.",
     projects: [
+        {
+            name: "Gem Hospital",
+            description: "A Booking software for hospital who can able to mange their general booking and online booking as per scheduling doctors and able manage over different Location, Branches, Services, Doctors, Slots, CMS with reports mangement and accounting.",
+            token: "Codeigniter 4, MYSQL, DHTML, Razorpay",
+            link: "",
+        },
+        {
+            name: "Live Stream",
+            description: "It an app which is used to stream their client products for end user marketing. Featuring Live Stream  Product selling software integrated with chat rooms with low latency. Over auto optimimized multiple bandwidth. ",
+            token: "Codeigniter, MYSQL, DHTML, Aws (IVS, IVS Chat, S3 Buckets)",
+            link: "",
+        },
+        {
+            name: "Year Book",
+            description: "It an app which is used to create a memorial books for their end-user which has access mangement for each book provided with shopify discount couponed. Where Pages and books are rate limted.",
+            token: "Codeigniter, MYSQL, DHTML, Shopify",
+            link: "https://cubicslifestylesalbum.in",
+
+        },
         {
             name: "Assert Mangement",
             description: "The app that has ability to mange asserts in organizational level and able to handle tickets on assert items and runs chat servers.",
@@ -39,6 +58,31 @@ export const data = {
         }
     ],
     milestones: [
+        {
+            title: "Involved in Multiple Project for Services like Payment Integration, Page Optimization, Managing Accounting logics, Query optimization, DB Normilization",
+            link: "",
+            date: "Feb 2023 - Dec 2023"
+        },
+        {
+            title: "Started a New Booking Management Software for Gem Hospital",
+            link: "https://gemhospitals.com/",
+            date: "November 2023"
+        },
+        {
+            title: "Started Working in Live Streaming Project For Intorlive Client in Aws environment ",
+            link: "",
+            date: "April 2023"
+        },
+        {
+            title: "Joined in a Yearbook Project",
+            link: "https://cubicslifestylesalbum.in/",
+            date: "February 2023"
+        },
+        {
+            title: "Joined in Insakal Services Pvt as Lead Associate Software Engineer",
+            link: "/",
+            date: "February 2023"
+        },
         {
             title: "M320:MongoDB Data Modeling",
             link: "/",
